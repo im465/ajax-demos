@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>AJAX demo 3</title>
+	</head>
+	<body>
+		<div id="number"></div>
+		<button id="btn">Get me a random number</button>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script>
+		
+		$('#btn').click(function() {
+			var data = {
+				min: 1000,
+				max: 9999
+			};
+			$.post('number.php', data, function(rsp) {
+				$('#number').html(rsp);
+			});
+		});
+		
+		</script>
+	</body>
+</html>
