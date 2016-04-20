@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>AJAX demo 1</title>
+	</head>
+	<body>
+		<div id="number"></div>
+		<button id="btn">Get me a random number</button>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="htmlspecialchars.js"></script>
+		<script>
+		
+		$('#btn').click(function() {
+			$.get('number.php', function(rsp) {
+				rsp = htmlspecialchars(rsp);
+				$('#number').html(rsp);
+			});
+		});
+		
+		</script>
+	</body>
+</html>

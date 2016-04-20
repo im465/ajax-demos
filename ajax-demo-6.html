@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>AJAX demo 1</title>
+	</head>
+	<body>
+		<div id="image"></div>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="htmlspecialchars.js"></script>
+		<script>
+		
+		$.ajax({
+			url: 'instagram.php',
+			success: function(rsp) {
+				var firstImage = rsp.data[0];
+				var src = firstImage.images.standard_resolution.url;
+				$('#image').html('<img src="' + src + '" alt="">');
+			}
+		});
+		
+		</script>
+	</body>
+</html>
